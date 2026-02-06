@@ -1,0 +1,8 @@
+FROM python:3.12-slim
+
+RUN pip install paho-mqtt
+
+WORKDIR /app
+COPY run.py .
+
+CMD ["python3", "/app/run.py"]

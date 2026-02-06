@@ -1,0 +1,28 @@
+name: MQTT LoRa Autodiscovery Extended
+version: 2.0.0
+slug: mqtt_lora
+description: Dynamische Erstellung von MQTT Discovery Geräten & Entitäten für LoRa-Sensoren.
+startup: services
+boot: auto
+host_network: true
+
+options:
+  mqtt_host: "core-mosquitto"
+  mqtt_port: 1883
+  mqtt_user: "mqtt"
+  mqtt_password: "mqtt"
+  topic_prefix: "physec/iotree-magdeburg-city-com/"
+  debounce_ms: 500
+  exclude_keys:
+    - "firmwareVersion"
+    - "alarmPayload"
+
+schema:
+  mqtt_host: str
+  mqtt_port: int
+  mqtt_user: str
+  mqtt_password: str
+  topic_prefix: str
+  debounce_ms: int
+  exclude_keys:
+    - str
